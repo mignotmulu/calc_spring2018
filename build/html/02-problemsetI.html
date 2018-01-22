@@ -21,8 +21,10 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="LMTH 2040: Multidisciplinary Calculus" href="01-syllabus.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -60,13 +62,13 @@ Development of Calculus</em> by C.H. Edwards.</p>
 <div class="section" id="Problem-I">
 <h2>Problem I<a class="headerlink" href="#Problem-I" title="Permalink to this headline">¶</a></h2>
 <div class="figure">
-<img alt="" src="images/section_I/p1.png" />
+<img alt="" src="_images/p1.png" />
 </div>
 <p>Use the images above to explain the formulas for the areas:</p>
 <ul class="simple">
-<li>of triangles </li>
-<li>of parallelograms </li>
-<li>of trapezoids </li>
+<li>of triangles <span class="math">\(A = \frac{1}{2}bh\)</span></li>
+<li>of parallelograms <span class="math">\(A = bh\)</span></li>
+<li>of trapezoids <span class="math">\(A = \frac{1}{2}(b_1 + b_2)h\)</span></li>
 </ul>
 </div>
 <div class="section" id="Problem-II">
@@ -81,45 +83,47 @@ parallelogram that is not a rectangle?</p>
 <ol class="loweralpha simple">
 <li>In one of the Rhind papyrus problems the area of a cirle is
 calculated by squaring 8/9 of its diameter. Compare this method with
-the area formula  to obtain the Egyptian
-approximation of .</li>
-<li>This approximation to  may have been found by trisecting
+the area formula <span class="math">\(A = \pi r^2\)</span> to obtain the Egyptian
+approximation of <span class="math">\(\pi = 3.16\)</span>.</li>
+<li>This approximation to <span class="math">\(\pi\)</span> may have been found by trisecting
 each side of a square circumscribed about a circle of diameter
-, and cut off its 4 corners. Show that the area here would
+<span class="math">\(d\)</span>, and cut off its 4 corners. Show that the area here would
 be:</li>
 </ol>
+<div class="math">
+\[A = \frac{7}{9}d^2 = \frac{63}{81}d^2 \approx \frac{64}{81}d^2 = (\frac{8}{9}d)^2\]</div>
 <div class="figure">
-<img alt="" src="images/section_I/p2.png" />
+<img alt="" src="_images/p2.png" />
 </div>
 </div>
 <div class="section" id="Problem-IV">
 <h2>Problem IV<a class="headerlink" href="#Problem-IV" title="Permalink to this headline">¶</a></h2>
-<p>Four copies of a right triangle with legs  and  and
-hypotenuse  together with a square of edge , are
-assembled as in Figure 3 to form a square of edge . Explain
+<p>Four copies of a right triangle with legs <span class="math">\(a\)</span> and <span class="math">\(b\)</span> and
+hypotenuse <span class="math">\(c\)</span> together with a square of edge <span class="math">\(c\)</span>, are
+assembled as in Figure 3 to form a square of edge <span class="math">\(a + b\)</span>. Explain
 why the assembled figure <em>is</em> a squre, and derive the Pythagorean
 relation by computing its area in two different ways.</p>
 <div class="figure">
-<img alt="" src="images/section_I/p3.png" />
+<img alt="" src="_images/p3.png" />
 </div>
 </div>
 <div class="section" id="Problem-V">
 <h2>Problem V<a class="headerlink" href="#Problem-V" title="Permalink to this headline">¶</a></h2>
-<p>The Babylonians generally used  for the area of a circle of
-radius , corresponding to the poor approximation
-. Show that this approxiamation could have been
+<p>The Babylonians generally used <span class="math">\(3r^2\)</span> for the area of a circle of
+radius <span class="math">\(r\)</span>, corresponding to the poor approximation
+<span class="math">\(\pi \approx 3\)</span>. Show that this approxiamation could have been
 obtained by averaging the areas of the iscribed and circumscribed
 squares shown below.</p>
 <div class="figure">
-<img alt="" src="images/section_I/p4.png" />
+<img alt="" src="_images/p4.png" />
 </div>
 </div>
 <div class="section" id="Problem-VI">
 <h2>Problem VI<a class="headerlink" href="#Problem-VI" title="Permalink to this headline">¶</a></h2>
-<p>Archimedes took a similar approach to approximating . He
+<p>Archimedes took a similar approach to approximating <span class="math">\(\pi\)</span>. He
 began by inscribing and circumscribing a circle with regular hexagons,
 and successively doubled the sides in order to, calculuating their
-perimeters to find upper and lower bounds for . Beginning
+perimeters to find upper and lower bounds for <span class="math">\(\pi\)</span>. Beginning
 with a circle of radius 1 and compute the perimeter for the following
 shapes:</p>
 <table border="1" class="docutils">
@@ -153,13 +157,27 @@ shapes:</p>
 <p>The Babylonians approached square root approximation in a similar
 iterative methodology like Archimedes use of the method of exhaustion.
 To start, suppose we have a guess that we think is close to
-</p>
-<p>Either  is a better guess or , but even
+<span class="math">\(\sqrt{2}\)</span></p>
+<div class="math">
+\[x_1 \approx \sqrt{2} \quad \rightarrow \quad x_1 \times x_1 \approx 2 \quad \rightarrow \quad x_1 \approx \frac{2}{x_1}\]</div>
+<p>Either <span class="math">\(x_1\)</span> is a better guess or <span class="math">\(\frac{2}{x}\)</span>, but even
 better still would be the average of the two:</p>
+<div class="math">
+\[x_2 = \frac{1}{2} \big(x_1 + \frac{2}{x_1}\big)\]</div>
 <p>If we continue in this manner we will get better and better
 approximations:</p>
-<p>Follow the Babylonians method to approximate  through
-. Repeat for .</p>
+<div class="math">
+\[x_3 = \frac{1}{2} \big(x_2 + \frac{2}{x_2}\big)\]</div>
+<div class="math">
+\[x_4 = \frac{1}{2} \big(x_3 + \frac{2}{x_3}\big)\]</div>
+<div class="math">
+\[x_5 = \frac{1}{2} \big(x_4 + \frac{2}{x_4}\big)\]</div>
+<div class="math">
+\[\vdots\]</div>
+<div class="math">
+\[x_{n+1} = \frac{1}{2} \big(x_n + \frac{2}{x_n}\big)\]</div>
+<p>Follow the Babylonians method to approximate <span class="math">\(\sqrt{2}\)</span> through
+<span class="math">\(x_5\)</span>. Repeat for <span class="math">\(\sqrt{3}\)</span>.</p>
 </div>
 <div class="section" id="Problem-VIII">
 <h2>Problem VIII<a class="headerlink" href="#Problem-VIII" title="Permalink to this headline">¶</a></h2>
@@ -168,14 +186,18 @@ numeration system to popular audiences in his writing. Here, collections
 of groups of 10 items were combined with positional notation and zero to
 make our familiar numeration system. For example, we would write 13,285
 as</p>
+<div class="math">
+\[13285 = 1*10^4 + 3*10^3 + 2*10^2 + 8*10^1 + 5*10^0\]</div>
 <p>Consider groupings different than base 10 for the following questions:</p>
 <ol class="arabic">
 <li><p class="first">How many numerals are required for a base 5 numeration system?</p>
 </li>
 <li><p class="first">Can you express the base 10 numbers 360, 78, 35, and 23 in base 5
-notation? (Ex 10 base 10 = (base 5))</p>
+notation? (Ex 10 base 10 = <span class="math">\(20_5\)</span>(base 5))</p>
 </li>
 <li><p class="first">0.3012 stands for</p>
+<div class="math">
+\[3/10 + 0/10^2 + 1/10^3 + 2/10^4\]</div>
 <p>. Write the same number as a decimal in base 5.</p>
 </li>
 </ol>
@@ -183,7 +205,7 @@ notation? (Ex 10 base 10 = (base 5))</p>
 <div class="section" id="Problem-IX">
 <h2>Problem IX<a class="headerlink" href="#Problem-IX" title="Permalink to this headline">¶</a></h2>
 <p>Al - Khowarizimi also discussed an approach to solving quadratic
-equations such as . According to Edwards, his
+equations such as <span class="math">\(x^2 + 10x = 39\)</span>. According to Edwards, his
 solution was</p>
 <ul class="simple">
 <li>Take half the number of roots, that is, five, and multply this by
@@ -194,33 +216,39 @@ of roots (five).</li>
 <li>The result, 3, is the required root.</li>
 </ul>
 <div class="figure">
-<img alt="" src="images/section_I/p5.png" />
+<img alt="" src="_images/p5.png" />
 </div>
-<p>Solve the equation  following a similar
+<p>Solve the equation <span class="math">\(x^2 + 8x = 65\)</span> following a similar
 construction to that above.</p>
 </div>
 <div class="section" id="Problem-X">
 <h2>Problem X<a class="headerlink" href="#Problem-X" title="Permalink to this headline">¶</a></h2>
 <p>The images below help to understand the value of expressions like:</p>
+<div class="math">
+\[1 + 2 + 3 + 4 + ... + (n-1) + n =\]</div>
 <div class="figure">
-<img alt="" src="images/section_I/p6.png" />
+<img alt="" src="_images/p6.png" />
 </div>
 <ol class="arabic simple">
-<li>Find the sum when </li>
-<li>Find the sum when </li>
+<li>Find the sum when <span class="math">\(n = 5\)</span></li>
+<li>Find the sum when <span class="math">\(n = 10\)</span></li>
 <li>Is there a way to use the image below to understand the sum when
-? <img alt="image0" src="images/section_I/p7.png" /></li>
+<span class="math">\(n = 100\)</span>? <img alt="image0" src="_images/p7.png" /></li>
 </ol>
 </div>
 <div class="section" id="Problem-XI">
 <h2>Problem XI<a class="headerlink" href="#Problem-XI" title="Permalink to this headline">¶</a></h2>
 <p>In the seventeenth century, Leibniz introduced modern summation
 notation. The previous problems sum would be written as</p>
-<p>which indicated we are adding (), starting with an index of
-1 (), and the things we are adding are simply the indices
-(). Sometimes, we recognize patterns in the partial sums of
+<div class="math">
+\[\sum_{i = 1}^n i\]</div>
+<p>which indicated we are adding (<span class="math">\(\sum\)</span>), starting with an index of
+1 (<span class="math">\(i = 1\)</span>), and the things we are adding are simply the indices
+(<span class="math">\(i\)</span>). Sometimes, we recognize patterns in the partial sums of
 terms as a way to understand the general approach. Consider the
 summation</p>
+<div class="math">
+\[\sum_{i = 1}^n i^3\]</div>
 <p>Fill in the table with the following partial sums. Do you see a pattern?
 Describe it.</p>
 <table border="1" class="docutils">
@@ -229,8 +257,8 @@ Describe it.</p>
 <col width="76%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head"></th>
-<th class="head">Partial Sum </th>
+<tr class="row-odd"><th class="head"><span class="math">\(n\)</span></th>
+<th class="head">Partial Sum <span class="math">\(\sum_{i = 1}^n i^3\)</span></th>
 </tr>
 </thead>
 <tbody valign="top">
@@ -274,14 +302,29 @@ Describe it.</p>
 
 <h3>Navigation</h3>
 <p class="caption"><span class="caption-text">Contents:</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="01-syllabus.html">LMTH 2040: Multidisciplinary Calculus</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Problem Set I</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Problem-I">Problem I</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Problem-II">Problem II</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Problem-III">Problem III</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Problem-IV">Problem IV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Problem-V">Problem V</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Problem-VI">Problem VI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Problem-VII">Problem VII</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Problem-VIII">Problem VIII</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Problem-IX">Problem IX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Problem-X">Problem X</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Problem-XI">Problem XI</a></li>
+</ul>
+</li>
 </ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="01-syllabus.html" title="previous chapter">LMTH 2040: Multidisciplinary Calculus</a></li>
   </ul></li>
 </ul>
 </div>
