@@ -56,7 +56,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'Calculus Notes: Spring 2018'
+project = 'LMTH 2040 Calculus: Spring 2018'
 copyright = '2018, J.F. Koehler'
 author = 'J.F. Koehler'
 
