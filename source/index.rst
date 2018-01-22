@@ -11,7 +11,7 @@ Welcome to Calculus Notes: Spring 2018's documentation!
    :caption: Contents:
 
    01-syllabus
-   02-problemset1
+   02-problemsetI
 
 
 Indices and tables
