@@ -9,7 +9,8 @@ Welcome to Calculus Notes: Spring 2018's documentation!
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
-
+   
+   00-overview
    01-syllabus
    02-problemsetI
    03-solutionsrubric
