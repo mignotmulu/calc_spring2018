@@ -13,7 +13,7 @@ Welcome to Calculus Notes: Spring 2018's documentation!
    00-overview
    01-syllabus
    02-problemsetI
-   03-solutionsrubric
+   03-class2goals
 
 
 Indices and tables
