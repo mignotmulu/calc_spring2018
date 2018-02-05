@@ -16,6 +16,7 @@ Welcome to Calculus Notes: Spring 2018's documentation!
    03-class2goals
    04-Lab_I
    05-RiemannSums
+   06-The-Definite-Integral
 
 Indices and tables
 ==================
