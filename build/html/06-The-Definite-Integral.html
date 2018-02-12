@@ -1,0 +1,499 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Using the Definition &#8212; LMTH 2040 Calculus: Spring 2018 0.0.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: ''
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Integration with Python" href="07-Integrals-with-Python.html" />
+    <link rel="prev" title="Riemann Sums" href="05-RiemannSums.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput,
+div.nbinput div.prompt,
+div.nbinput div.input_area,
+div.nbinput div[class*=highlight],
+div.nbinput div[class*=highlight] pre,
+div.nboutput,
+div.nbinput div.prompt,
+div.nbinput div.output_area,
+div.nboutput div[class*=highlight],
+div.nboutput div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput,
+div.nboutput {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput,
+    div.nboutput {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput div.prompt pre {
+    color: #303F9F;
+}
+
+/* output prompt */
+div.nboutput div.prompt pre {
+    color: #D84315;
+}
+
+/* all prompts */
+div.nbinput div.prompt,
+div.nboutput div.prompt {
+    min-width: 8ex;
+    padding-top: 0.4em;
+    padding-right: 0.4em;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput div.prompt,
+    div.nboutput div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput div.prompt pre,
+div.nboutput div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput div.input_area,
+div.nboutput div.output_area {
+    padding: 0.4em;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput div.input_area,
+    div.nboutput div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    background: #f7f7f7;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.pngmath center alignment in output cells */
+div.nboutput div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+</style>
+<div class="section" id="Using-the-Definition">
+<h1>Using the Definition<a class="headerlink" href="#Using-the-Definition" title="Permalink to this headline">¶</a></h1>
+<div class="math">
+\[\int_a^b f(x) dx = R(n) = \lim n \rightarrow \infty (\frac{b-a}{n})\sum_{i=1}^n f(a + i\frac{b-a}{n})\]</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sy</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="n">x</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x n&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="n">sy</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">sy</span><span class="o">.</span><span class="n">summation</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ 2
+n    n
+── + ─
+2    2
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="n">sy</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">sy</span><span class="o">.</span><span class="n">summation</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ 3    2
+n    n    n
+── + ── + ─
+3    2    6
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="n">sy</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">sy</span><span class="o">.</span><span class="n">summation</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ 4    3    2
+n    n    n
+── + ── + ──
+4    2    4
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="n">sy</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">sy</span><span class="o">.</span><span class="n">summation</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">4</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ 5    4    3
+n    n    n    n
+── + ── + ── - ──
+5    2    3    30
+</pre></div></div>
+</div>
+<div class="section" id="Problem-I">
+<h2>Problem I<a class="headerlink" href="#Problem-I" title="Permalink to this headline">¶</a></h2>
+<p>Use the definition and our summation formulas to evaluate the area under
+the given function and approximate what happens as
+<span class="math">\(n \rightarrow \infty\)</span> on given domain:</p>
+<ol class="loweralpha simple">
+<li><span class="math">\(f(x) = x\)</span> on <span class="math">\([1,4]\)</span></li>
+<li><span class="math">\(g(x) = x^2 - 2x\)</span> on <span class="math">\([2, 4]\)</span></li>
+<li><span class="math">\(h(x) = x^3 - x + 1\)</span> on <span class="math">\([1, 3]\)</span></li>
+</ol>
+</div>
+<div class="section" id="Problem-II">
+<h2>Problem II<a class="headerlink" href="#Problem-II" title="Permalink to this headline">¶</a></h2>
+<p>We want to examine patterns on the interval <span class="math">\([0,b]\)</span> for polynomial
+functions. Let’s use the definition to prove the following:</p>
+<ol class="loweralpha simple">
+<li><span class="math">\(\int_0^b x = \frac{b^2}{2}\)</span></li>
+<li><span class="math">\(\int_0^b x^2 = \frac{b^3}{3}\)</span></li>
+<li><span class="math">\(\int_0^b x^3 = \frac{b^4}{4}\)</span></li>
+</ol>
+</div>
+<div class="section" id="Problem-III">
+<h2>Problem III<a class="headerlink" href="#Problem-III" title="Permalink to this headline">¶</a></h2>
+<p><strong>Theorem</strong>: Assume that <span class="math">\(f(x)\)</span> is continuous on <span class="math">\([a,b]\)</span> and
+let <span class="math">\(F(x)\)</span> be an antiderivative of <span class="math">\(f(x)\)</span> on <span class="math">\([a,b]\)</span>.
+Then</p>
+<div class="math">
+\[\int_a^b f(x) = F(b) - F(a)\]</div>
+<p>Use the attached <a class="reference external" href="integral-table.pdf">table of integrals</a> and the
+theorem above to evaluate the following definite integrals.</p>
+<ol class="loweralpha simple">
+<li><span class="math">\(\int_0^2 2x^2 - x ~ dx\)</span></li>
+<li><span class="math">\(\int_{1/2}^{2} \ln{x} ~ dx\)</span></li>
+<li><span class="math">\(\int_0^{2\pi} \sin{x} ~ dx\)</span></li>
+</ol>
+</div>
+<div class="section" id="Problem-IV">
+<h2>Problem IV<a class="headerlink" href="#Problem-IV" title="Permalink to this headline">¶</a></h2>
+<p><strong>Interpreting the Integral as Total Change</strong>:</p>
+<p>Water flows into an empty bucket at a rate of <span class="math">\(r(t)\)</span> gallons per
+second. How much water is in the bucket after 5 seconds? If the rate is
+constant, we would have <span class="math">\(0.3 \times 5 = 1.5\)</span> gallons. If the rate
+is not constant, we can interpret the quantity of water as equal to the
+area under the graph of <span class="math">\(r(t)\)</span>.</p>
+<ol class="loweralpha simple">
+<li>A survey shows that a mayoral candidate is gaining votes at a rate of
+<span class="math">\(2000t + 150\)</span> votes per day, where <span class="math">\(t\)</span> is the number of
+days since announcing her candidacy. How many supporters after 90
+days?</li>
+<li>A projectile is released with initial (vertical) velocity 100 m/s.
+Use the formula <span class="math">\(v(t) = 100 - 98t\)</span> for velocity to determine
+the distance traveled during the first 15 seconds.</li>
+<li>The rate at which water drains from a tank is recorded at half-minute
+intervals. Use approximations to estimate the total amount of water
+drained during the first 3 minutes.</li>
+</ol>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="67%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">liters</th>
+<th class="head"><span class="math">\(t\)</span>(min)</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0</td>
+<td>50</td>
+</tr>
+<tr class="row-odd"><td>0.5</td>
+<td>48</td>
+</tr>
+<tr class="row-even"><td>1</td>
+<td>46</td>
+</tr>
+<tr class="row-odd"><td>1.5</td>
+<td>43</td>
+</tr>
+<tr class="row-even"><td>2</td>
+<td>40</td>
+</tr>
+<tr class="row-odd"><td>2.5</td>
+<td>39</td>
+</tr>
+<tr class="row-even"><td>3</td>
+<td>36</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="Problem-V">
+<h2>Problem V<a class="headerlink" href="#Problem-V" title="Permalink to this headline">¶</a></h2>
+<p><strong>Area Between Curves</strong></p>
+<p>Use the definite integral to find specified area between two curves.</p>
+<ol class="arabic simple">
+<li>Area between <span class="math">\(y = x^3 - 2x^2 + 10\)</span> and
+<span class="math">\(y = 3x^2 + 4x - 10\)</span>.</li>
+<li>Area between <span class="math">\(y = 0.5 x\)</span> and <span class="math">\(y = x\sqrt{1 - x^2}\)</span></li>
+<li>Area between <span class="math">\(y = 4 - x^2\)</span> and <span class="math">\(y = x^2 - 4\)</span></li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">LMTH 2040 Calculus: Spring 2018</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="00-overview.html">Multidisciplinary Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01-syllabus.html">LMTH 2040: Multidisciplinary Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02-problemsetI.html">Problem Set I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-class2goals.html">Class II</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-Lab_I.html">Introducing Python: Lab I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05-RiemannSums.html">Riemann Sums</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Using the Definition</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Problem-I">Problem I</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Problem-II">Problem II</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Problem-III">Problem III</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Problem-IV">Problem IV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Problem-V">Problem V</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="07-Integrals-with-Python.html">Integration with Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08-in-class-integrals.html">Defining Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08-in-class-integrals.html#Problem-3b">Problem 3b</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0.10_calc_consumer_surplus.html">Supply and Demand: Consumer Surplus</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="05-RiemannSums.html" title="previous chapter">Riemann Sums</a></li>
+      <li>Next: <a href="07-Integrals-with-Python.html" title="next chapter">Integration with Python</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, J.F. Koehler.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/06-The-Definite-Integral.ipynb"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

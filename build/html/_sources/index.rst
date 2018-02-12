@@ -16,6 +16,11 @@ Welcome to Calculus Notes: Spring 2018's documentation!
    03-class2goals
    04-Lab_I
    05-RiemannSums
+   06-The-Definite-Integral
+   07-Integrals-with-Python
+   08-in-class-integrals
+   09_calc_Gini_Index
+   0.10_calc_consumer_surplus
 
 Indices and tables
 ==================
