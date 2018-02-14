@@ -21,10 +21,6 @@ Welcome to Calculus Notes: Spring 2018's documentation!
    08-in-class-integrals
    0.9_calc_Gini_Index
    0.10_calc_consumer_surplus
+   11-Exam-I
 
-Indices and tables
-==================
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`

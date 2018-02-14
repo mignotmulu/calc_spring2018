@@ -1,0 +1,569 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Examination Paper I &#8212; LMTH 2040 Calculus: Spring 2018 0.0.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: ''
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput,
+div.nbinput div.prompt,
+div.nbinput div.input_area,
+div.nbinput div[class*=highlight],
+div.nbinput div[class*=highlight] pre,
+div.nboutput,
+div.nbinput div.prompt,
+div.nbinput div.output_area,
+div.nboutput div[class*=highlight],
+div.nboutput div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput,
+div.nboutput {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput,
+    div.nboutput {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput div.prompt pre {
+    color: #303F9F;
+}
+
+/* output prompt */
+div.nboutput div.prompt pre {
+    color: #D84315;
+}
+
+/* all prompts */
+div.nbinput div.prompt,
+div.nboutput div.prompt {
+    min-width: 8ex;
+    padding-top: 0.4em;
+    padding-right: 0.4em;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput div.prompt,
+    div.nboutput div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput div.prompt pre,
+div.nboutput div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput div.input_area,
+div.nboutput div.output_area {
+    padding: 0.4em;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput div.input_area,
+    div.nboutput div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    background: #f7f7f7;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.pngmath center alignment in output cells */
+div.nboutput div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+</style>
+<div class="section" id="Examination-Paper-I">
+<h1>Examination Paper I<a class="headerlink" href="#Examination-Paper-I" title="Permalink to this headline">¶</a></h1>
+<p>The goal of this paper is to assess your understanding of the definite
+integral. You have two choices in terms of problems. The second set are
+more substantial and involve heavy use of the computer.</p>
+<ul class="simple">
+<li>Six Problems from Section I</li>
+<li>Two Problems from Section II</li>
+</ul>
+<p>Guidance on which problems to complete and how to complete them will
+depend on your present interest and comfort with the definite integral.</p>
+<div class="section" id="Section-I:-Approximation-Methods">
+<h2>Section I: Approximation Methods<a class="headerlink" href="#Section-I:-Approximation-Methods" title="Permalink to this headline">¶</a></h2>
+<div class="figure">
+<img alt="" src="_images/exam_approx.png" />
+</div>
+<p><strong>Rectangles</strong></p>
+<p><em>Problem 1</em>. Using the image above, with four subintervals as shown, and
+an arbitrary function <span class="math">\(f(x)\)</span>, determine and explain the formula
+requested. Your formula should be in terms of the left endpoint of the
+subinterval <span class="math">\(a\)</span>, the right endpoint of the interval <span class="math">\(b\)</span>, and
+the number of subdivisions of the interval <span class="math">\(n\)</span>:</p>
+<ol class="arabic simple">
+<li>Rectangles built on the left endpoint of each subinterval</li>
+<li>Rectangles built on the right endpoint of each subinterval</li>
+<li>Rectangles built on the midpoint of each subinterval</li>
+</ol>
+<p><strong>Trapezoids</strong></p>
+<p><em>Problem 2</em>. Determine the formula using the image above, with four
+subintervals, an arbitrary function <span class="math">\(g(x)\)</span>, and trapezoids
+connected by the top of each vertical bar, for example, the first
+trapezoid would be determined by
+<span class="math">\(x_1, x_2, f(x_1), \text{and}~ f(x_2)\)</span>.</p>
+<p><strong>Parabolas</strong></p>
+<p><em>Problem 3</em>. Derive and use Simpson’s rule to approximate one of the
+integrals in section below. This is not for the weak at heart.</p>
+<p><strong>Using the Formulas</strong></p>
+<p><em>Problem 4</em>. Use the left, right, or midpoint formulas to approximate
+the area under the given curves on the given intervals, with the
+appropriate n values.</p>
+<ol class="arabic simple">
+<li><span class="math">\(f(x) = x^2 + x\)</span> on <span class="math">\([0, 4]\)</span> with 8 rectangles.</li>
+<li><span class="math">\(g(x) = 2 + \sin{x}\)</span> on <span class="math">\([0, 3\pi]\)</span> with 6 rectangles.</li>
+<li>Solve problem 1 using trapezoids instead of rectangles.</li>
+<li>Solve problem 2 using trapezoids instead of rectangles.</li>
+</ol>
+</div>
+<div class="section" id="Exact-Formula">
+<h2>Exact Formula<a class="headerlink" href="#Exact-Formula" title="Permalink to this headline">¶</a></h2>
+<p>Here, we focus on situations where we allow the number of rectangles to
+approach infinity. We allow the use of rules of integration and computer
+evaluation of integrals. The following questions deal with typical
+topics from large scale calculus examinations.</p>
+<div class="math">
+\[\displaystyle \int_a^b f(x) ~ dx\]</div>
+<p><strong>Area Under Curve</strong></p>
+<p><em>Problem 5</em>. Use the appropriate rules for integration or the computer
+to evaluate the given definite integral. Interpret the problem in terms
+of area under the curve.</p>
+<ol class="arabic simple">
+<li><span class="math">\(f(x) = x^4 - 3x^2 + 5\)</span> on <span class="math">\([1, 5]\)</span></li>
+<li><span class="math">\(f(x) = \sin{x} - e^x\)</span> on <span class="math">\([\pi, 4\pi]\)</span></li>
+<li><span class="math">\(f(x) = x^3\cos{x}\)</span> on <span class="math">\([0, 2\pi]\)</span> <strong>(Hint: Advanced
+Formula Required by Hand)</strong></li>
+</ol>
+<p><strong>Area Between Curves</strong></p>
+<p><em>Problem 6</em>. Solve these problems dealing with the area between curves.
+Be sure you show how all answers were determined.</p>
+<ol class="arabic simple">
+<li><span class="math">\(f(x) = \sin{x}\)</span> and <span class="math">\(g(x) = \cos{x}\)</span></li>
+<li><span class="math">\(f(x) = 2-x^2\)</span> and <span class="math">\(g(x) = x\)</span></li>
+<li><span class="math">\(f(x) = -x^2 + 3x\)</span> and <span class="math">\(g(x) = 2x^3 - x^2 - 5x\)</span></li>
+</ol>
+<p><strong>Volume of Solids formed by Revolution</strong></p>
+<p><em>Problem 7</em>. Find the volume of the solid formed by rotating each of the
+regions above in the Area Between Curves about the <span class="math">\(x\)</span>-axis.</p>
+</div>
+<div class="section" id="Economics-Applications">
+<h2>Economics Applications<a class="headerlink" href="#Economics-Applications" title="Permalink to this headline">¶</a></h2>
+<p><em>Problem 8</em>. Answer the problems below dealing with the Gini Index as a
+measure for inequality.</p>
+<ol class="arabic simple">
+<li>The table below shows how total energy produced and total energy
+consumed was divided among the 25 largest producers and users of
+energy in 1963. Draw the corresponding Lorenz curve and perfect
+equality line. Was production of energy more or less equally divided
+than was use of energy? Why? Interpret the Gini Index in this
+context.</li>
+</ol>
+<table border="1" class="docutils">
+<colgroup>
+<col width="42%" />
+<col width="25%" />
+<col width="32%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Fraction of Countries</th>
+<th class="head">Energy Used</th>
+<th class="head">Energy Produced</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0.0</td>
+<td>0.00</td>
+<td>0.00</td>
+</tr>
+<tr class="row-odd"><td>0.2</td>
+<td>0.027</td>
+<td>0.032</td>
+</tr>
+<tr class="row-even"><td>0.4</td>
+<td>0.065</td>
+<td>0.084</td>
+</tr>
+<tr class="row-odd"><td>0.6</td>
+<td>0.135</td>
+<td>170</td>
+</tr>
+<tr class="row-even"><td>0.8</td>
+<td>0.266</td>
+<td>0.3031</td>
+</tr>
+<tr class="row-odd"><td>1.0</td>
+<td>1.000</td>
+<td>1.0000</td>
+</tr>
+</tbody>
+</table>
+<ol class="arabic simple" start="2">
+<li>The table below shows how gross national product (GNP) is distributed
+among the countries of the world:</li>
+</ol>
+<table border="1" class="docutils">
+<colgroup>
+<col width="57%" />
+<col width="43%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Fraction of Countries</th>
+<th class="head">Fraction of GNP</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="row-odd"><td>0.1</td>
+<td>0.001</td>
+</tr>
+<tr class="row-even"><td>0.2</td>
+<td>0.002</td>
+</tr>
+<tr class="row-odd"><td>0.3</td>
+<td>0.005</td>
+</tr>
+<tr class="row-even"><td>0.4</td>
+<td>0.010</td>
+</tr>
+<tr class="row-odd"><td>0.5</td>
+<td>0.018</td>
+</tr>
+<tr class="row-even"><td>0.6</td>
+<td>0.028</td>
+</tr>
+<tr class="row-odd"><td>0.7</td>
+<td>0.058</td>
+</tr>
+<tr class="row-even"><td>0.8</td>
+<td>0.11</td>
+</tr>
+<tr class="row-odd"><td>0.9</td>
+<td>0.21</td>
+</tr>
+<tr class="row-even"><td>1.0</td>
+<td>1.00</td>
+</tr>
+</tbody>
+</table>
+<ol class="loweralpha simple">
+<li>Determine the Lorenz Curve for this data using the model you deem
+most appropriate.</li>
+<li>Draw the Lorenz Curve and the curve for completely unequal
+distribution on the same axes.</li>
+<li>Is the GNP divided equally or unequally among the countries of the
+world?</li>
+</ol>
+<p><em>Problem 9</em>. The concept of Gini Coefficients to measure inequality is a
+popular topic in Classical Economics type textbooks. For example, Paul
+Samuelson’s <em>Economics</em>. Consult an economics textbook for additional
+examples, and rewrite some examples to incorporate finding the equation
+of the curve and using integration to determine the Gini value.</p>
+<p><em>Problem 10</em>. Answer the following questions pertaining to the Consumer
+and Producer surplus.</p>
+<ol class="arabic simple">
+<li>Find the equilibrium price and quantity and consumer surplus for the
+given supply and demand functions.</li>
+<li><span class="math">\(s(q) = \frac{q}{27,000} \quad D(q) = 10 - \frac{q}{3,000}\)</span></li>
+<li><span class="math">\(s(q) =3q \quad D(q) = 6 - 3q \quad \text{where q is in 10,000's of units}\)</span></li>
+<li>Discrimination by consumers means buying each additional unit
+<span class="math">\((\Delta q_i)\)</span> at cost (which is <span class="math">\(S(q_i)\)</span>. Total revenue
+now become equal to this since</li>
+</ol>
+<div class="math">
+\[\sum p_i \Delta q_i = \sum S(q_i) \Delta q_i \approx \int_0^{q\star} s(q)dq\]</div>
+<p>Make an argument that this represents the cost to the producers of the
+goods sold on the market. Thus arguing that the area below the
+equilibruim price line and above the supply curve, <span class="math">\(p = S(q)\)</span> on
+producers in a competitive market, the <strong>producer’s surplus</strong>. Make a
+visualization of this concept. Give the integral formula for the
+<strong>producer’s surplus</strong>. Calculate the <strong>producer’s surplus</strong> for each of
+the problems 1a and 1b.</p>
+</div>
+<div class="section" id="Section-II:-Computing-and-Further-Applications">
+<h2>Section II: Computing and Further Applications<a class="headerlink" href="#Section-II:-Computing-and-Further-Applications" title="Permalink to this headline">¶</a></h2>
+<p><em>Problem 11</em>: Archimedes use of exhaustion to approximate pi can be
+framed as a recurrence relationship. Your task is to explain this
+relationship using the discussion in Edwards <em>Historical Origins of the
+Calculus</em>, and to write a computer program that carries out
+approximations to pi to a given number of sides of polygons.</p>
+<p><em>Problem 12</em>: Archimedes determination of the Area under a Parabola can
+be framed as sequence of sums of triangular areas. Write a short program
+that allows users to input the number of divisions under the Parabola,
+and outputs the approximation with a visualization of the region.</p>
+<p><em>Problem 13</em>: Write a computer program that takes as input a function,
+left endpoint, right endpoint, and number of subintervals and returns
+the approximation for rectangles and trapezoids as well as the exact
+area. You should have a visualization with three subplots that
+demonstrate the approximations.</p>
+</div>
+<div class="section" id="Probability-and-Statistics">
+<h2>Probability and Statistics<a class="headerlink" href="#Probability-and-Statistics" title="Permalink to this headline">¶</a></h2>
+<p>We need better materials addressing probability and statistics and their
+connections to introductory integration techniques. These problems will
+deal with developing short introductory videos and/or other media
+tutorials for important ideas from Probability and Statistics.</p>
+<p><em>Problem 14</em>: What is a probability distribution? What is the difference
+between discrete and continuous probability distributions? Explain these
+in terms of a specific example? You should frame these in terms of
+summations and definite integrals.</p>
+<p><em>Problem 15</em>: What is a <em>Poisson Model</em> and what kind of situations do
+we use it for?</p>
+<p><em>Problem 16</em>: What is an <em>exponential random variable</em>? What are some
+examples of situations where we would use this?</p>
+<p><em>Problem 17</em>: What is the <em>normal distribution</em>? What are some examples
+of situations where we would us this? What is special about the standard
+deviation and areas under the curve?</p>
+<p><em>Problem 18</em>: What is the difference between a <em>probability
+distribution</em> and a <em>cumulative probability distribution</em>? Please use an
+example to demonstrate.</p>
+<p><em>Problem 19</em>: Textbook Problems. Read Gilbert Strang’s Section on
+<a class="reference external" href="files/probability_strang.pdf">Probability and Calculus</a>. Answer
+questions #24 - 36.</p>
+</div>
+<div class="section" id="Figure-Source-Code">
+<h2>Figure Source Code<a class="headerlink" href="#Figure-Source-Code" title="Permalink to this headline">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [64]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s1">&#39;Figure 1&#39;</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="mi">4</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;green&#39;</span><span class="p">)</span>
+<span class="n">width</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span> <span class="o">+</span> <span class="n">i</span><span class="o">*</span><span class="n">width</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">[</span><span class="n">f</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">a</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([</span><span class="o">-</span><span class="mf">1.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;$a = x_1$&#39;</span><span class="p">,</span> <span class="s1">&#39;$x_2$&#39;</span><span class="p">,</span> <span class="s1">&#39;$x_3$&#39;</span><span class="p">,</span> <span class="s1">&#39;$x_4$&#39;</span><span class="p">,</span> <span class="s1">&#39;$x_5 = b$&#39;</span><span class="p">],</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">18</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;Area Under the Curve $f(x)$&#39;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">),</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">18</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Approximating the Area Under the Curve</span><span class="se">\n</span><span class="s1">using Rectangles, Trapezoids, and Parabolas&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;images/exam_approx.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="_images/11-Exam-I_7_0.png" src="_images/11-Exam-I_7_0.png" />
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">LMTH 2040 Calculus: Spring 2018</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="00-overview.html">Multidisciplinary Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01-syllabus.html">LMTH 2040: Multidisciplinary Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02-problemsetI.html">Problem Set I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-class2goals.html">Class II</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-Lab_I.html">Introducing Python: Lab I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05-RiemannSums.html">Riemann Sums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06-The-Definite-Integral.html">Using the Definition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07-Integrals-with-Python.html">Integration with Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08-in-class-integrals.html">Defining Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08-in-class-integrals.html#Problem-3b">Problem 3b</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0.9_calc_Gini_Index.html">Wealth Distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0.10_calc_consumer_surplus.html">Supply and Demand: Consumer Surplus</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, J.F. Koehler.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/11-Exam-I.ipynb"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
